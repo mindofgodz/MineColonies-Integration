@@ -79,10 +79,12 @@ function getRequests()
 	centerText("  <<< Back     ", 19, colors.gray, colors.white, "head")
 	centerText("  Colony Integration v1 -By MindofGodz  ", 1, colors.gray, colors.white, "head")
 	  centerText("Requests", 2, colors.black, colors.white, "head")
-	    for h, r in ipairs(colony.getRequests()) do	
-			  centerText(r.name.. " - ".. r.target, row, colors.black, colors.white, "left")
+	    for h, r in ipairs(colony.getRequests()) do
+		if colony.getRequests{} then
+			centerText(r.name.. " - ".. r.target, row, colors.black, colors.white, "left")
 		end
 	row = row+1
+	end
 		while true do
 		event, p1,p2,p3 = os.pullEvent()
 		if event == "monitor_touch" then
